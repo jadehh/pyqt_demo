@@ -15,7 +15,7 @@ jobs:
       - name: 查看Windows环境
         run: |
           cd C:\Windows\SysWOW64
-          ls -l
+          ls
       - name: 下载代码
         uses: actions/checkout@v3
         with:
