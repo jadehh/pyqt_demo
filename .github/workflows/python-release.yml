@@ -17,7 +17,7 @@ jobs:
         with:
           ref: main
       - name: 升级WindowsSDK
-      - uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.11
+        uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.11
         with:
           sdk-version: 22000
       - name: Windows 准备Python3.6 X86 环境
