@@ -16,6 +16,10 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: main
+      - name: 升级WindowsSDK
+      - uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.11
+        with:
+          sdk-version: 22000
       - name: Windows 准备Python3.6 X86 环境
         uses: actions/setup-python@v3
         with:
@@ -26,13 +30,13 @@ jobs:
         run: |
           python -m pip install --upgrade pip
       - name: Windows操作系统准备打包环境
-        shell: pwsh
+        shell: bash
         run: |
           pip install -r requirements.txt
       - name: 编译打包
         env:
           PYTHONIOENCODING: "utf-8"
-        shell: pwsh
+        shell: bash
         run: |
           python packing_app.py  # --specify_files samplesMain.py
       - name: 测试是否打包完成
