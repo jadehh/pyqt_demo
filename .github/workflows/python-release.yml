@@ -30,14 +30,12 @@ jobs:
         shell: bash
         run: |
           pip install -r requirements.txt
-      - name: Windows升级SDK并打包
-      - uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.11
-        with:
-          sdk-version: 22000
+      - name: 编译打包
         env:
           PYTHONIOENCODING: "utf-8"
         shell: bash
         run: |
+          python main.py
           python packing_app.py  # --specify_files samplesMain.py
       - name: 测试是否打包完成
         shell: bash
