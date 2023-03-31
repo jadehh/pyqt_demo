@@ -34,7 +34,7 @@ jobs:
           PYTHONIOENCODING: "utf-8"
         shell: pwsh
         run: |
-          python packing.py   # --specify_files samplesMain.py
+          python packing_app.py  # --specify_files samplesMain.py
       - name: 测试是否打包完成
         shell: pwsh
         run: |
