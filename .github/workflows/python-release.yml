@@ -12,6 +12,10 @@ jobs:
         os: ["windows-latest"] # "ubuntu-18.04", "windows-latest","macos-latest"
         python-version: ["3.6"]
     steps:
+      - name: 查看Windows环境
+        run:
+          cd C:\Windows\SysWOW64
+          ls -l
       - name: 下载代码
         uses: actions/checkout@v3
         with:
@@ -35,7 +39,6 @@ jobs:
           PYTHONIOENCODING: "utf-8"
         shell: bash
         run: |
-          python main.py
           python packing_app.py  # --specify_files samplesMain.py
       - name: 测试是否打包完成
         shell: bash
