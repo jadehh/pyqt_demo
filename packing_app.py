@@ -25,7 +25,7 @@ if __name__ == '__main__':
         parser.add_argument('--full', type=str,
                             default="False")  ## 打包成一个完成的包
         parser.add_argument('--extra_path_list', type=list,
-                            default=[])
+                            default=[("lib/Windows/", ".")])
     else:
         parser.add_argument('--extra_sys_str', type=str,
                             default=[])  ## sys.path.append需要额外打包的路径
@@ -61,6 +61,7 @@ if __name__ == '__main__':
     parser.add_argument('--is_qt', type=str, default="False")  ## qt 会将controller view src 都进行编译
     parser.add_argument('--specify_files', type=str, default="")  ## 指定编译的文件
     args = parser.parse_args()
+
     build(args)
     packAPP(args)
 
