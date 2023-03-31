@@ -1,0 +1,2 @@
+PyQt5
+https://gh.con.sh/https://github.com/jadehh/pythonTools/releases/download/JadeV1.9.3/jade-1.9.3-py3-none-any.whl
